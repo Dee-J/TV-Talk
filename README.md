@@ -1,7 +1,7 @@
 # TV-Talk
-Channel based Chatting
+Sogang Univ Capstone Design | Channel based Chatting Service
 
-It will start after midterm exam.
+It will start after midterm exam. (Nov.)
 
 ```c
 #include<stdio.h>
@@ -14,13 +14,13 @@ int main()
 
 #Before we start
 `Each of you have responsibility of your job.`
-##Tizen TV (Client side)
+##Tizen TV
  - 최동진
 
-##Android (Client side)
+##Android
  - 위희
 
-##Node.js (Server side)
+##Node.js
  - 조장희
 
 
