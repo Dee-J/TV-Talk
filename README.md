@@ -40,8 +40,9 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 
 ###금요일 (중간발표)
 	발표 - 조장희 ㅋㅋㅋㅋㅋㅋㅋㅋ
-<br><br><br><br><br><br><br><br><br><br><br><br>
 ---
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 #Wiki Page for TV - Talk
 
