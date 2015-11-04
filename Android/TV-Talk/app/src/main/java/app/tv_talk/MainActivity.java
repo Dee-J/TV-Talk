@@ -9,6 +9,10 @@ import android.view.WindowManager;
 import java.util.ArrayList;
 
 import com.androidquery.AQuery;
+import com.androidquery.callback.AjaxCallback;
+import com.androidquery.callback.AjaxStatus;
+
+import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
     private AQuery aq;
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         message_list = new ArrayList<String>();
         message_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,  message_list);
         fileCheck();
+        asyncJson();
 
         aq.id(R.id.ChatList).adapter(message_adapter);
         aq.id(R.id.ChatList).setSelection(message_adapter.getCount() - 1);
@@ -43,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     {
         fio = new FileIO("Chat.txt");
         if(fio.CreateFile())
-            message_list.add("create file success");
+            message_list.add("Create file success");
         else
             message_list.add("Read Message");
 
@@ -77,5 +82,19 @@ public class MainActivity extends AppCompatActivity {
             message_list.add("접속 실패");
             message_adapter.notifyDataSetChanged();
         }
+    }
+    public void asyncJson() {
+        String url = "http://www.google.com/uds/GnewsSearch?q=Obama&v=1.0";
+
+        aq.ajax(url, JSONObject.class, new AjaxCallback<JSONObject>(){
+            @Override
+            public void callback(String url, JSONObject object, AjaxStatus status) {
+                if(object != null) {
+                    message_list.add(status.getMessage());
+                    message_list.add(object.toString());
+                }
+            }
+        });
+
     }
 }
