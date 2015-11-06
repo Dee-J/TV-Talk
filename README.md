@@ -50,6 +50,8 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 ## 프로젝트 명
 ### TV - Talk###
 채널 기반 양방향 채팅 서비스
+![2](https://cloud.githubusercontent.com/assets/8381373/10990574/0b674242-8498-11e5-80bd-aba259da83b0.png)
+![default](https://cloud.githubusercontent.com/assets/8381373/10990702/5c4ca02a-8499-11e5-97ff-2485037346de.png)
 
 ## 프로젝트 추진 배경
 ### 환경
@@ -139,12 +141,14 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 - 팀원 : 최동진 - Documentation, Tizen TV 어플리케이션 개발
 - 팀원 : 장위희 - 안드로이드 어플리케이션 개발
 
-![coding](https://cloud.githubusercontent.com/assets/8381373/10930969/b3ceedf6-8306-11e5-947e-9e196b7edd4c.jpg)
+<br><br><br><br><br><br><br><br>
 
 #요구사항 명세서
 ##1. 개요
 ##2. 기능적 요구사항
 ###2.1. 시스템 기능 구조
+![1](https://cloud.githubusercontent.com/assets/8381373/10990555/de9aac0e-8497-11e5-9af8-827063230457.png)
+
 ####2.1.1. 유스케이스 패키지 구조도
 ####2.1.2. 유스케이스 패키지 개요
 
@@ -164,18 +168,14 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 #####*2.2.4.3 우선 순위*
 ![4](https://cloud.githubusercontent.com/assets/8381373/10989973/634a6c20-8491-11e5-990e-e537f6a10be3.PNG)
 #####*2.2.4.4 선행 조건*
-* TV시청자는 시스템에 접속을 한 상태이어야 한다.
-* TV시청자는 하나의 채널만을 시청 중이어야 한다.
-* 자동 채팅방 관리 시스템은 기존의 채널에 해당하는 채팅방이 없을때 채팅방을 생성해야한다.
+![dd](https://cloud.githubusercontent.com/assets/8381373/10990667/faf7bc2e-8498-11e5-80fb-d1ee00b963db.PNG)
 
 #####*2.2.4.5 후행 조건*
-* 삭제된 채팅방은 접속 불가능 상태가 된다.
-* 채널 변경 후 변경 전 기존의 접속해 있는 채팅방에서 나가야 한다.
+![default](https://cloud.githubusercontent.com/assets/8381373/10990674/1bf26474-8499-11e5-84f8-b269c76e1826.PNG)
 
 #####*2.2.4.6 시나리오*
-* 기본 시나리오
-
-* 대안시나리오
+* 기본 시나리오는 아직 작성중입니다....
+* 대안 시나리오는 아직 작성중입니다....
 
 #####*2.2.4.7 비기능적 요구사항*
 
@@ -187,4 +187,3 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 ##4. 개발 제약 사항
 
 
-![coding](https://cloud.githubusercontent.com/assets/8381373/10930969/b3ceedf6-8306-11e5-947e-9e196b7edd4c.jpg)
