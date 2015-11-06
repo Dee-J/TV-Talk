@@ -160,12 +160,24 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 #####*2.2.4.1 개요*
 ![2](https://cloud.githubusercontent.com/assets/8381373/10988965/c6284798-8484-11e5-8a8e-21e7b9704d66.PNG)
 #####*2.2.4.2 관련 액터*
+![3](https://cloud.githubusercontent.com/assets/8381373/10989940/0c9b3c7e-8491-11e5-9107-464f320ad370.PNG)
 #####*2.2.4.3 우선 순위*
+![4](https://cloud.githubusercontent.com/assets/8381373/10989973/634a6c20-8491-11e5-990e-e537f6a10be3.PNG)
 #####*2.2.4.4 선행 조건*
-#####*2.2.4.5 후행 조건*
-#####*2.2.4.6 시나리오*
-#####*2.2.4.7 비기능적 요구사항*
+* TV시청자는 시스템에 접속을 한 상태이어야 한다.
+* TV시청자는 하나의 채널만을 시청 중이어야 한다.
+* 자동 채팅방 관리 시스템은 기존의 채널에 해당하는 채팅방이 없을때 채팅방을 생성해야한다.
 
+#####*2.2.4.5 후행 조건*
+* 삭제된 채팅방은 접속 불가능 상태가 된다.
+* 채널 변경 후 변경 전 기존의 접속해 있는 채팅방에서 나가야 한다.
+
+#####*2.2.4.6 시나리오*
+* 기본 시나리오
+
+* 대안시나리오
+
+#####*2.2.4.7 비기능적 요구사항*
 
 ##3. 시스템 품질 요구사항
 ###3.1. 성능
@@ -173,3 +185,6 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 ###3.3. 확장성
 ###3.4. 보안성
 ##4. 개발 제약 사항
+
+
+![coding](https://cloud.githubusercontent.com/assets/8381373/10930969/b3ceedf6-8306-11e5-947e-9e196b7edd4c.jpg)
