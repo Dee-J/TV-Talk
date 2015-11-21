@@ -12,6 +12,8 @@ import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -26,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     private SocketConnect sc;
     private String ip = "192.168.153.128";
     private int port = 8000;
-
-    private String url = "http://www.google.com/uds/GnewsSearch?q=Obama&v=1.0";
+    // server info
+    private String url = "http://192.168.153.128/info.php";
     // json 받아오는 url
     private String channel = "현재 채널 : ";
     // 앱 타이틀부에 현재 접속중인 채널명을 붙일것
@@ -44,19 +46,24 @@ public class MainActivity extends AppCompatActivity {
         Connect();
         readServerJson();
         change_channel("");
+        // initial
 
         aq.id(R.id.listView).adapter(message_adapter);
         aq.id(R.id.listView).setSelection(message_adapter.getCount() - 1);
+        // link adapter and scroll down to end line
+
         aq.id(R.id.sendButton).clicked(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 send_text();
             }
         });
-        message_adapter.notifyDataSetChanged();
+        // method만 넣었더니 Android Studio 1.5에서 안먹히길래 리스너 오버라이드
 
-        //hide keybord
+        message_adapter.notifyDataSetChanged();// update
+
         getWindow().setSoftInputMode((WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN));
+        // hide keybord
     }
 
     private void send_text(){
@@ -68,9 +75,10 @@ public class MainActivity extends AppCompatActivity {
         message_adapter.notifyDataSetChanged();
         message_text.setText("");
     }
+
     private void send_json(String str){
         JSONObject obj = sc.SendMessageServer("Type", str);
-        aq.post(url, obj, JSONObject.class, new AjaxCallback<JSONObject>(){
+        aq.post(this.url, obj, JSONObject.class, new AjaxCallback<JSONObject>(){
             @Override
             public void callback(String url, JSONObject object, AjaxStatus status) {
                 if(object != null){
@@ -95,6 +103,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readServerJson(){
+        // read 예제
+        JSONConnect jcon = new JSONConnect();
+        JSONArray str = jcon.textJSONPassing();
+        if(str == null)
+            return;
+        try {
+            for (int i = 0; i != str.length(); i++) {
+                JSONObject obj = str.getJSONObject(i);
+                message_list.add(obj.getString("Message").toString());
+            }
+        }
+        catch (JSONException je){
+            Log.i("JSON", "Read Fail");
+        }
+        /*
         aq.ajax(this.url, JSONObject.class, new AjaxCallback<JSONObject>(){
             @Override
             public void callback(String url, JSONObject object, AjaxStatus status) {
@@ -110,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        */
     }
 
     private void change_channel(String str){

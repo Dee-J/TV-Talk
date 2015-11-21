@@ -26,8 +26,8 @@ public class FileIO {
     }
     FileIO(String fileName) {
         this.fileName = Environment.getExternalStorageDirectory()+"/test/"+fileName;
-        path = Environment.getExternalStorageDirectory()+"/test/";
-        file = null;
+        this.path = Environment.getExternalStorageDirectory()+"/test/";
+        this.file = null;
     }
 
     public ArrayList<String> ReadFile() {
@@ -37,13 +37,13 @@ public class FileIO {
 
         result.clear();
         try{
-            reader = new BufferedReader((new FileReader(file)));
+            this.reader = new BufferedReader((new FileReader(file)));
             String s;
             try {
-                while ((s = reader.readLine()) != null) {
+                while ((s = this.reader.readLine()) != null) {
                     result.add(s);
                 }
-                reader.close();
+                this.reader.close();
             }
             catch (IOException e) {
                 return result;
@@ -61,14 +61,14 @@ public class FileIO {
         if(!dir.exists())
             dir.mkdir();
 
-        file = new File(this.fileName);
-        if(file == null)
+        this.file = new File(this.fileName);
+        if(this.file == null)
             result = false;
-        else if(file.exists())
+        else if(this.file.exists())
             result = false;
         else {
             try {
-                file.createNewFile();
+                this.file.createNewFile();
                 result = true;
             } catch (IOException e) {
                 result = false;
@@ -79,10 +79,10 @@ public class FileIO {
     public boolean WriteFile(String str) {
         boolean result = true;
         try {
-            writer = new BufferedWriter(new FileWriter(file, true));
-            writer.write(str);
-            writer.newLine();
-            writer.close();
+            this.writer = new BufferedWriter(new FileWriter(file, true));
+            this.writer.write(str);
+            this.writer.newLine();
+            this.writer.close();
         }
         catch (IOException e){
             result = false;
