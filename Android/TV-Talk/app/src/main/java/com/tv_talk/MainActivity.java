@@ -74,15 +74,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void callback(String url, JSONObject object, AjaxStatus status) {
                 if(object != null){
-                    Log.i("POST JSON", "보내기 성공");
+                    Log.i("JSON", "보내기 성공");
                 }
                 else{
-                    Log.i("POST JSON", "보내기 실패");
+                    Log.i("JSON", "보내기 실패");
                 }
             }
         });
     }
-    
+
     private void Connect(){
         sc = new SocketConnect(this.ip, this.port);
         boolean result = this.sc.Connect();
