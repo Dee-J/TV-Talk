@@ -1,4 +1,4 @@
-package app.tv_talk;
+package com.tv_talk;
 
 import android.os.Environment;
 
@@ -19,21 +19,18 @@ public class FileIO {
     BufferedReader reader;
     BufferedWriter writer;
 
-    FileIO()
-    {
+    FileIO() {
         file = null;
         fileName = Environment.getExternalStorageDirectory()+"/test/";
         path = Environment.getExternalStorageDirectory()+"/test/";
     }
-    FileIO(String fileName)
-    {
+    FileIO(String fileName) {
         this.fileName = Environment.getExternalStorageDirectory()+"/test/"+fileName;
         path = Environment.getExternalStorageDirectory()+"/test/";
         file = null;
     }
 
-    public ArrayList<String> ReadFile()
-    {
+    public ArrayList<String> ReadFile() {
         ArrayList<String> result = new ArrayList<String>();
         if(this.fileName == null)
             return result;
@@ -79,8 +76,7 @@ public class FileIO {
         }
         return result;
     }
-    public boolean WriteFile(String str)
-    {
+    public boolean WriteFile(String str) {
         boolean result = true;
         try {
             writer = new BufferedWriter(new FileWriter(file, true));
@@ -94,8 +90,7 @@ public class FileIO {
         return result;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return this.fileName;
     }
 }

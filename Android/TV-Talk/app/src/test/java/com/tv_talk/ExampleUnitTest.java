@@ -1,4 +1,4 @@
-package app.tv_talk;
+package com.tv_talk;
 
 import org.junit.Test;
 
