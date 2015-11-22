@@ -1,40 +1,43 @@
 package com.tv_talk;
 
-import com.github.nkzawa.socketio.client.IO;
-import com.github.nkzawa.socketio.client.Socket;
-
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.Socket;
+import java.net.SocketAddress;
 import java.util.ArrayList;
 
-public class SocketConnect {
+public class ServerConnect {
     private String ip;
-    private String port;
-    private Socket m_socket;
-    SocketConnect() {
+    private int port;
+    private Socket conn;
+    ServerConnect() {
         ip = null;
-        port = null;
+        port = 8000;
+        conn = null;
     }
-    SocketConnect(String ip, int port) {
+    ServerConnect(String ip, int port) {
         this.ip = ip;
-        this.port = String.valueOf(port);
+        this.port = port;
+        conn = null;
     }
 
     public boolean Connect() {
         boolean result = true;
         try {
-            m_socket = IO.socket(this.ip+":"+this.port);
-            m_socket.connect();
-            if(m_socket.connected()) {
-                result = true;
-                m_socket.disconnect();
+            if (conn != null) {
+                conn.close();
+                conn = null;
             }
-            else
-                result = false;
+            conn = new Socket(ip, port);
+            result = conn.isConnected();
+            if(result == true)
+                conn.close();
         }
-        catch (Exception e) {
+        catch (IOException e) {
             result = false;
         }
+
         return result;
     }
     public ArrayList<String> Passing() {

@@ -25,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     private AQuery aq;  // aquery
 
-    private SocketConnect sc;
-    private String ip = "192.168.153.128";
+    private ServerConnect sc;
+    private SocketConnect soc;
+    private String ip = "192.168.200.124";
     private int port = 8000;
     // server info
     private String url = "http://192.168.153.128/info.php";
@@ -92,29 +93,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Connect(){
-        sc = new SocketConnect(this.ip, this.port);
-        boolean result = this.sc.Connect();
+        boolean result;
+        soc = new SocketConnect(this.ip, this.port);
+        result = this.soc.Connect();
         if(result == true){
-            Log.i("Connect", "접속 성공");
+            Log.i("Socket", "접속 성공");
         }
         else{
-            Log.i("Connect", "접속 실패");
+            Log.i("Socket", "접속 실패");
         }
     }
 
     private void readServerJson(){
         // read 예제
         JSONConnect jcon = new JSONConnect();
-        JSONArray str = jcon.textJSONPassing();
+        String[] str = jcon.textJSONPassing();
         if(str == null)
             return;
         try {
-            for (int i = 0; i != str.length(); i++) {
-                JSONObject obj = str.getJSONObject(i);
-                message_list.add(obj.getString("Message").toString());
+            for (int i = 0; i != str.length; i++) {
+                if(str[i] == null)
+                    break;
+                message_list.add(str[i]);
             }
+            Log.i("JSON", "Read Success");
         }
-        catch (JSONException je){
+        catch (NullPointerException e){
             Log.i("JSON", "Read Fail");
         }
         /*

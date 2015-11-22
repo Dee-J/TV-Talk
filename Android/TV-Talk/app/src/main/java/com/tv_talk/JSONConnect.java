@@ -51,17 +51,24 @@ public class JSONConnect {
         return obj;
     }
     public String gettextJSON(){ return this.textjson; }
-    public JSONArray textJSONPassing(){
+    public String[] textJSONPassing(){
+        String[] temp = null;
         JSONArray arr;
         try {
             JSONObject obj123 = new JSONObject(this.textjson);
             arr = new JSONArray(obj123.getString("List"));
-            return arr;
+            if (arr == null)
+                return null;
+            temp = new String[arr.length() + 1];
+            for (int i = 0; i != arr.length(); i++) {
+                JSONObject obj = arr.getJSONObject(i);
+                temp[i] = obj.getString("Message").toString();
+            }
+            return temp;
         }
         catch (JSONException je) {
             arr = null;
         }
-
-        return arr;
+        return temp;
     }
 }
