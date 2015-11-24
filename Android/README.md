@@ -1,4 +1,4 @@
-# json ¹Þ¾Æ¿À´Â node.js ÆÄÀÏ
+# json ë°›ì•„ì˜¬ node.js ì˜ˆì œ
 
 var app = require('express')();
 var http = require('http').Server(app);
