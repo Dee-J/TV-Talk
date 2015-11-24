@@ -8,22 +8,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class SocketConnect {
-    private String ip;
-    private String port;
+    private String url;
     private Socket m_socket;
     SocketConnect() {
-        ip = null;
-        port = null;
+        url = "";
     }
-    SocketConnect(String ip, int port) {
-        this.ip = ip;
-        this.port = String.valueOf(port);
+    SocketConnect(String url) {
+        this.url = url;
     }
 
     public boolean Connect() {
         boolean result = true;
         try {
-            m_socket = IO.socket(this.ip+":"+this.port);
+            m_socket = IO.socket(this.url);
             m_socket.connect();
             if(m_socket.connected()) {
                 result = true;

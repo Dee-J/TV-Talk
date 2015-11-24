@@ -27,11 +27,19 @@ public class JSONConnect {
             "{\"Type\": \"MessagePush\", \"Message\": \"test14\"},"+
     "{\"Type\": \"MessagePush\", \"Message\": \"test15\"}]}";
 
-    public String Parssing(JSONObject object){
-        String str = null;
+    public String[] DecodeJSONObj(JSONObject object){
+        String[] str;
+        JSONArray arr;
         try{
-            JSONObject obj = object.getJSONObject("responseData");
-            str = new String(obj.toString());
+            arr = new JSONArray(object.getString("List"));
+            if (arr == null)
+                return null;
+            str = new String[arr.length()];
+            for (int i = 0; i != arr.length(); i++) {
+                JSONObject obj = arr.getJSONObject(i);
+                str[i] = obj.getString("Message").toString();
+            }
+            return str;
         }
         catch(JSONException je) {
             str = null;
