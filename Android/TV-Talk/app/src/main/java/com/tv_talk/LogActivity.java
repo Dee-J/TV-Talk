@@ -24,7 +24,9 @@ public class LogActivity extends AppCompatActivity {
         message_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, message_list);
 
         Intent intent = getIntent();
-        this.url = intent.getStringExtra("url");
+        this.url = intent.getStringExtra("url");// current URL
+        this.message_list.addAll(intent.getStringArrayListExtra("Log"));
+        // LOG list
         // get URL
 
         aq = new AQuery(this);

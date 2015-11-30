@@ -14,9 +14,11 @@ import com.androidquery.callback.AjaxStatus;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
-
+    private ArrayList<String> Log_Message;
     private ServerConnect sc;
     private SocketConnect soc;
     private String ip = "192.168.200.124";
@@ -36,9 +38,12 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setSoftInputMode((WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN));
         // hide keybord
 
+        this.Log_Message = new ArrayList<String>();
+
         this.webView = (WebView)findViewById(R.id.webView);
         this.webView.getSettings().setJavaScriptEnabled(true);
         this.webView.loadUrl(this.url);
+        this.Log_Message.add("Connect to "+this.url);
     }
 
     @Override
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             case 1:
                 intent = new Intent(getApplicationContext(), LogActivity.class);
                 intent.putExtra("url", this.url.toString());
+                intent.putStringArrayListExtra("Log", this.Log_Message);
                 startActivity(intent);
                 return true;
             case 2:
@@ -68,13 +74,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override   // Change URL
     protected  void onActivityResult(int requestCode, int resultCode, Intent data){
-        if(resultCode == RESULT_OK){
-            String temp = data.getStringExtra("url").toString();
-            if(temp == null)
-                return;
+        if(requestCode == 0) {  // requestCode = 0 -> Change URL
+            if (resultCode == RESULT_OK) {
+                String temp = data.getStringExtra("url").toString();
+                if (temp == null)
+                    return;
 
-            this.url = temp.toString();
-            this.webView.loadUrl(this.url);
+                this.Log_Message.add("URL Change: " + this.url + " -> " + temp);
+                this.url = temp.toString();
+                this.webView.loadUrl(this.url);
+            }
         }
     }
 
