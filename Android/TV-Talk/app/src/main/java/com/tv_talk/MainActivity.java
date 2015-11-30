@@ -1,29 +1,21 @@
 package com.tv_talk;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.WindowManager;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
+import android.webkit.WebView;
 
-import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity {
-    private EditText message_text;
-    private ArrayList<String> message_list;
-    private ArrayAdapter<String> message_adapter;
-
-    private AQuery aq;  // aquery
+    private WebView webView;
 
     private ServerConnect sc;
     private SocketConnect soc;
@@ -34,40 +26,59 @@ public class MainActivity extends AppCompatActivity {
     // json 받아오는 url
     private String channel = "현재 채널 : ";
     // 앱 타이틀부에 현재 접속중인 채널명을 붙일것
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        message_text = (EditText)findViewById(R.id.editText);
-        message_list = new ArrayList<String>();
-        message_adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, message_list);
-
-        aq = new AQuery(this);
-        //Connect();
-        readServerJson();
-        change_channel("");
-        // initial
-        message_adapter.notifyDataSetChanged();// update
-
-        aq.id(R.id.listView).adapter(message_adapter);
-        aq.id(R.id.listView).setSelection(message_adapter.getCount() - 1);
         // link adapter and scroll down to end line
-
-        aq.id(R.id.sendButton).clicked(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                send_text();
-            }
-        });
-        // method만 넣었더니 Android Studio 1.5에서 안먹히길래 리스너 오버라이드
-
-        message_adapter.notifyDataSetChanged();// update
 
         getWindow().setSoftInputMode((WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN));
         // hide keybord
+
+        this.webView = (WebView)findViewById(R.id.webView);
+        this.webView.getSettings().setJavaScriptEnabled(true);
+        this.webView.loadUrl(this.url);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        super.onCreateOptionsMenu(menu);
+        MenuItem item = menu.add(0, 1, 0, "Log");
+        item = menu.add(0, 2, 0, "Setting");
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        Intent intent;
+        switch(item.getItemId()){
+            case 1:
+                intent = new Intent(getApplicationContext(), LogActivity.class);
+                intent.putExtra("url", this.url.toString());
+                startActivity(intent);
+                return true;
+            case 2:
+                intent = new Intent(getApplicationContext(), UrlActivity.class);
+                intent.putExtra("url", this.url.toString());
+                startActivityForResult(intent, 0);
+                return true;
+        }
+        return false;
+    }
+
+    @Override   // Change URL
+    protected  void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode == RESULT_OK){
+            String temp = data.getStringExtra("url").toString();
+            if(temp == null)
+                return;
+
+            this.url = temp.toString();
+            this.webView.loadUrl(this.url);
+        }
+    }
+
+    /*
     private void send_text(){
         if(message_text.length() == 0){
             return;
@@ -77,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
         message_adapter.notifyDataSetChanged();
         message_text.setText("");
     }
-
+    */
+    /*
     private void send_json(String str){
         JSONObject obj = sc.SendMessageServer("Type", str);
         aq.post(this.url, obj, JSONObject.class, new AjaxCallback<JSONObject>(){
@@ -92,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    */
+    /*
     private void Connect(){
         boolean result;
         soc = new SocketConnect(this.url);
@@ -104,8 +117,9 @@ public class MainActivity extends AppCompatActivity {
             Log.i("Socket", "접속 실패");
         }
     }
+    */
 
-    private void readServerJson(){
+//    private void readServerJson(){
         /*
         // read 예제
         JSONConnect jcon = new JSONConnect();
@@ -124,6 +138,7 @@ public class MainActivity extends AppCompatActivity {
             Log.i("JSON", "Read Fail");
         }
         */
+    /*
         aq.ajax(this.url, JSONObject.class, new AjaxCallback<JSONObject>(){
             @Override
             public void callback(String url, JSONObject object, AjaxStatus status) {
@@ -152,8 +167,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void change_channel(String str){
+    */ protected void change_channel(String str){
         this.setTitle(this.channel + str);
     }
 }
