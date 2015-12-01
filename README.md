@@ -1,4 +1,8 @@
 #D-Day - 9
+=======
+#D-Day -10
+허허허허허허허허<br><br><br><br><br>
+192.168.0.8:8080
 
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
@@ -67,10 +71,10 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 * **Major Issue**
 	* 대항해시대 ㅅㅂ....
 	* **TV와 바인딩 할 수 있는 방법**
+	* 게임하지 말자.
 * **Minor Issue** 
 	* 더미 폰들 (시연 용 ) 제작 !
 
-=======
 ## MileStone
 
 ###동진
