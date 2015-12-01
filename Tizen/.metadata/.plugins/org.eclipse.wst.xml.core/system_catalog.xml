@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-  <public publicId="-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.jst.jsf.facelet.core_1.2.0.v201305011549.jar!/dtd/facelet-taglib_1_0.dtd" webURL="facelet-taglib_1_0.dtd"/>
   <public publicId="-//WAPFORUM//DTD WML 1.1//EN" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171716.jar!/dtds/wml11.dtd"/>
   <public publicId="-//W3C//DTD XHTML 1.0 Strict//EN" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171716.jar!/dtds/xhtml1-strict.dtd" webURL="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
   <public publicId="-//W3C//DTD XHTML 1.0 Transitional//EN" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171716.jar!/dtds/xhtml1-transitional.dtd" webURL="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
@@ -28,4 +27,5 @@
   <uri name="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200802" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.wst.standard.schemas_1.0.700.v201304171716.jar!/xsd/ws-securitypolicy.xsd"/>
   <system systemId="http://www.w3.org/2001/xml.xsd" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.xsd_2.9.1.v20140203-1126.jar!/cache/www.w3.org/2001/xml.xsd"/>
   <uri name="http://www.w3.org/2001/XMLSchema" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.xsd_2.9.1.v20140203-1126.jar!/cache/www.w3.org/2001/XMLSchema.xsd"/>
+  <public publicId="-//Sun Microsystems, Inc.//DTD Facelet Taglib 1.0//EN" uri="jar:file:/Users/CDJ/tizen-sdk/ide/plugins/org.eclipse.jst.jsf.facelet.core_1.2.0.v201305011549.jar!/dtd/facelet-taglib_1_0.dtd" webURL="facelet-taglib_1_0.dtd"/>
 </catalog>

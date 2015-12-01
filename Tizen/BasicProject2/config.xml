@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns:tizen="http://tizen.org/ns/widgets"
+        xmlns="http://www.w3.org/ns/widgets"
+        id="http://yourdomain/TVChannel"
+        version="1.1.0"
+        viewmodes="fullscreen">
+    <access origin="*" subdomains="true"></access>
+    <tizen:application id="demoapp023.TVChannel"
+                       package="demoapp023"
+                       required_version="2.3"/>
+    <tizen:setting screen-orientation="landscape" context-menu="enable" background-support="disable" encryption="disable" install-location="auto" hwkey-event="enable"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <icon src="icon.png"/>
+    <name>TVChannel</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.inputdevice"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.channel"/>
+    <tizen:privilege name="http://tizen.org/privilege/tv.display"/>
+    <tizen:category name="http://samsung.com/category/ticker" />
+    <tizen:privilege name="http://tizen.org/privilege/tv.tunner" />
+    <tizen:profile name="tv"/>
+</widget>
