@@ -64,7 +64,7 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 
 ###위희
 * **Major Issue**
-	* ????
+	* 게임하지 말자.
 * **Minor Issue** 
 	* ????
 
