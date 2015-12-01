@@ -1,20 +1,15 @@
-# json 받아올 node.js 예제
+# layout 설명
+activity_main.xml : WebView 화면
 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+change_url.xml : 디버그용 node.js 서버 주소 변경하는 팝업창
 
-app.get('/', function(req, res){
-	res.send('{List:[{"Type": "MessagePush", "Message": "test"},{"Type": "MessagePush", "Message": "test1"}, {"Type": "MessagePush", "Message": "test2"}]}');
-});
+chattinglayout.xml : 예전에 listView, 혹시 몰라 저장함
 
-io.on('connection', function(socket){
-	console.log('a user connected');
-	socket.on('disconnect', function(){
-		console.log('user disconnected');
-	    });
-});
+loglayout.xml : log 찍는곳, node.js 서버 주소 찍음
 
-http.listen(8000, function(){
-	console.log('listening on *:8000');
-});
+# java code
+MainActivity.java : WebView 메인
+
+LogActivity.java : log 출력
+
+UrlActivity.java : Url 변경하는 팝업창, Change버튼 누르면 전송, Cancel버튼 누르면 안전송

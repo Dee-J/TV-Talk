@@ -1,3 +1,7 @@
+#D-Day -10
+허허허허허허허허<br><br><br><br><br>
+
+
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
 
@@ -18,31 +22,85 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 7. git push
 	- 서버에 실제로 올림
 
-## TODO
-###월요일
-	회의
 
-###화요일
-	1. 동진 : Wiki 작성_1
-	2. 장희 : Node 사용법 --> 각자 디버깅 할 수 있을 정도로 자세히(드랍박스) + 사진 첨부
-	3. 위희 : Server IO 가 아니라 단순 File IO Test ( + 통신규약 감안하기)
+## MileStone
 
-###수요일
-	1. 동진 : Wiki 작성_2
-	2. 장희 : 서버 주소 고정할 방법 알아보기(학교 or 교수에게 물어보기)
-	3. 위희 : 서버통신이 아니라 Local 에서 실제 테스트 해보기.
+###동진
+1. 채널 정보 가져오는 모듈 제작
+2. 채팅창 view 제작
+3. 채팅창 내부에 UI 작업 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
+	*  navigator : 채널 정보, 메뉴 버튼 
+	*  section : 채팅 내용 
+	*  footer : 광고 
+4. 서버 바인딩 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
+	* 서버로부터 채팅 내용 받아오기
+	* 주기적으로 새로 고침
+5. 안드로이드 바인딩 **(가장 큰 문제...-_-)**
+	* TV -> 서버 / 안드로이드 : 현재 시청중인 채널 정보 전송
+		* 서버사이드 : 보내주는 채팅방 정보 변경
+		* 안드로이드 : 미투...-_-
+	* 아 모르겠다...-_-
 
-###목요일
-	1. 동진 : 위키 완성
-	2. 동진, 위희 : TV <--> Phone Socket 통신 확인
-	3. 동진, 장희 : TV <--> Server Socket 통신 확인
-	4. 장희, 위희 : Phone <--> Server Socket 통신 확인
+	
 
-###금요일 (중간발표)
-	발표 - 조장희 ㅋㅋㅋㅋㅋㅋㅋㅋ
+
+* **Major Issue**
+	* Ticker app 개발 방법
+	* 애뮬레이터에서 채널 정보 API
+	* 채널 정보 수집은 어떻게 하나 시팡 --> Tizen API 검색
+	* 서버 바인딩 (IP Fix 합시다?)
+* **Minor Issue** 
+	* Tizen에서 jquery를 어떻게 쓰나??
+	* CAPH 사용해서 채팅창 animate 하기
+	* 리모컨 키 바인딩 처리 (ignore 명령어 검색해보기)
+	* 채팅방 bootstrap 검색
+		* 아니면 걍 맨들어도 무방 할듯	
+
+###장희
+* **Major Issue**
+	* ????
+* **Minor Issue** 
+	* ????
+
+###위희
+* **Major Issue**
+	* ????
+* **Minor Issue** 
+	* ????
+
+=======
+## MileStone
+
+###동진
+* **Major Issue**
+	* Ticker app 개발 방법
+	* 애뮬레이터에서 채널 정보 API
+	* 채널 정보 수집은 어떻게 하나 시팡 --> Tizen API 검색
+	* 서버 바인딩 (IP Fix 합시다?)
+* **Minor Issue** 
+	* Tizen에서 jquery를 어떻게 쓰나??
+	* CAPH 사용해서 채팅창 animate 하기
+	* 리모컨 키 바인딩 처리 (ignore 명령어 검색해보기)
+	* 채팅방 bootstrap 검색
+		* 아니면 걍 맨들어도 무방 할듯	
+
+###장희
+* **Major Issue**
+	* ????
+* **Minor Issue** 
+	* ????
+
+###위희
+* **Major Issue**
+	* ????
+* **Minor Issue** 
+	* ????
+
+<br><br><br><br><br><br><br><br>
+
 ---
-![coding](https://cloud.githubusercontent.com/assets/8381373/10930969/b3ceedf6-8306-11e5-947e-9e196b7edd4c.jpg)
 
+<br><br><br><br><br><br><br><br>
 
 
 # Wiki Page for TV - Talk
