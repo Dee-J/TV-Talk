@@ -1,3 +1,6 @@
+#D-Day -10
+허허허허허허허허<br><br><br><br><br>
+
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
 
