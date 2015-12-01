@@ -1,6 +1,4 @@
-#D-Day -10
-허허허허허허허허<br><br><br><br><br>
-
+#D-Day - 9
 
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
@@ -9,7 +7,7 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 ###하루의 시작
 1. git pull
 2. git log
-	- 작업 내역 확인 가능 (끝내는건 q)	
+	- 작업 내역 확인 가능 (끝내는건)
 3. <- 너의 작업 ㄱㄱ ->
 4. git add *
 	- 변경 파일들을 모두(*) stage에 올리는 작업
@@ -25,30 +23,27 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 
 ## MileStone
 
-###동진
+###동진 - TV
 1. 채널 정보 가져오는 모듈 제작
-2. 채팅창 view 제작
-3. 채팅창 내부에 UI 작업 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
+2. 채팅창 view 제작 (div or iframe) : Tizen에서 어떻게 동작하는지 확인 얘네는 CAPH사용하니까..
+3. 채팅창 내부에 CSS 작업 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
 	*  navigator : 채널 정보, 메뉴 버튼 
 	*  section : 채팅 내용 
 	*  footer : 광고 
-4. 서버 바인딩 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
-	* 서버로부터 채팅 내용 받아오기
-	* 주기적으로 새로 고침
-5. 안드로이드 바인딩 **(가장 큰 문제...-_-)**
+4. 서버 바인딩 (IP ?)
+	* 가상 컴퓨터 방화벽 설정
+
+5. 안드로이드 바인딩 **(가장 큰 문제...-_- 나중에 생각....ㅠㅜㅠㅜㅜㅠㅠㅜㅠㅠ)**
 	* TV -> 서버 / 안드로이드 : 현재 시청중인 채널 정보 전송
 		* 서버사이드 : 보내주는 채팅방 정보 변경
 		* 안드로이드 : 미투...-_-
 	* 아 모르겠다...-_-
 
-	
-
-
 * **Major Issue**
 	* Ticker app 개발 방법
 	* 애뮬레이터에서 채널 정보 API
 	* 채널 정보 수집은 어떻게 하나 시팡 --> Tizen API 검색
-	* 서버 바인딩 (IP Fix 합시다?)
+	* 서버 바인딩 ( IP : **163.239.7.34:8080** )
 * **Minor Issue** 
 	* Tizen에서 jquery를 어떻게 쓰나??
 	* CAPH 사용해서 채팅창 animate 하기
@@ -58,15 +53,22 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 
 ###장희
 * **Major Issue**
-	* ????
+	* 채널방 매니저 제작
+		* 접속자의 정보를 읽어서 적절한 채팅방을 보여줌
+		* TV로 부터 받은 채널 정보를 기반으로 안드로이드 및 TV에 보여주는 채팅방이 달라져야함.
+			* ~~*좀 어려워 보임.ㅋㅋㅋㅋㅋㅋ나도모르겠닼ㅋㅋㅋ*~~
+	* UI 좀 길쭉하게 하고
 * **Minor Issue** 
-	* ????
+	* 모든게 이슈지 지금...
+	* 위키??ㅋㅋㅋㅋ
+	* Static IP
 
 ###위희
 * **Major Issue**
-	* ????
+	* 대항해시대 ㅅㅂ....
+	* **TV와 바인딩 할 수 있는 방법**
 * **Minor Issue** 
-	* ????
+	* 더미 폰들 (시연 용 ) 제작 !
 
 =======
 ## MileStone

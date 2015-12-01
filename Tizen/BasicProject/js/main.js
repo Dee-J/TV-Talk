@@ -2,6 +2,7 @@ var startTime;
 var checkTime;
 var showChatWindow;
 
+var a = SystemInfoDisplay;
 
 function showChatWindow() {
 	console.log("Show chat window");
@@ -9,7 +10,6 @@ function showChatWindow() {
 	//$('ChatWindow').slideup();
 	
 }
-
 
 //Initialize function
 var init = function () {
@@ -46,7 +46,8 @@ var init = function () {
     	case 403: //A button
     		// Open Chat Window
     		console.log("Key code : " + e.keyCode + " : A BUTTON (RED)");
-    		showChatWindow();
+    		// showChatWindow();
+    		console.log(a);
     		break;
     	case 404: //B button
     		console.log("Key code : " + e.keyCode + " : B BUTTON (GREEN)");
