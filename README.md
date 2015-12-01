@@ -1,3 +1,5 @@
+#D-Day -10
+허허허허허허허허<br><br><br><br><br>
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
 
@@ -21,6 +23,24 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 ## MileStone
 
 ###동진
+1. 채널 정보 가져오는 모듈 제작
+2. 채팅창 view 제작
+3. 채팅창 내부에 UI 작업 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
+	*  navigator : 채널 정보, 메뉴 버튼 
+	*  section : 채팅 내용 
+	*  footer : 광고 
+4. 서버 바인딩 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
+	* 서버로부터 채팅 내용 받아오기
+	* 주기적으로 새로 고침
+5. 안드로이드 바인딩 **(가장 큰 문제...-_-)**
+	* TV -> 서버 / 안드로이드 : 현재 시청중인 채널 정보 전송
+		* 서버사이드 : 보내주는 채팅방 정보 변경
+		* 안드로이드 : 미투...-_-
+	* 아 모르겠다...-_-
+
+	
+
+
 * **Major Issue**
 	* Ticker app 개발 방법
 	* 애뮬레이터에서 채널 정보 API
