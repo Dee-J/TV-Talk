@@ -96,7 +96,6 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 * **Minor Issue** 
 	* ????
 
->>>>>>> 6d5741dffecd8004d9ab7103bfbb78793d81c99e
 <br><br><br><br><br><br><br><br>
 
 ---
