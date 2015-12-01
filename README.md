@@ -1,5 +1,7 @@
 #D-Day -10
 허허허허허허허허<br><br><br><br><br>
+
+
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
 
@@ -19,6 +21,7 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 	- conflict 나면 카톡해...ㄷㄷ
 7. git push
 	- 서버에 실제로 올림
+
 
 ## MileStone
 
@@ -65,6 +68,35 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 * **Minor Issue** 
 	* ????
 
+=======
+## MileStone
+
+###동진
+* **Major Issue**
+	* Ticker app 개발 방법
+	* 애뮬레이터에서 채널 정보 API
+	* 채널 정보 수집은 어떻게 하나 시팡 --> Tizen API 검색
+	* 서버 바인딩 (IP Fix 합시다?)
+* **Minor Issue** 
+	* Tizen에서 jquery를 어떻게 쓰나??
+	* CAPH 사용해서 채팅창 animate 하기
+	* 리모컨 키 바인딩 처리 (ignore 명령어 검색해보기)
+	* 채팅방 bootstrap 검색
+		* 아니면 걍 맨들어도 무방 할듯	
+
+###장희
+* **Major Issue**
+	* ????
+* **Minor Issue** 
+	* ????
+
+###위희
+* **Major Issue**
+	* ????
+* **Minor Issue** 
+	* ????
+
+>>>>>>> 6d5741dffecd8004d9ab7103bfbb78793d81c99e
 <br><br><br><br><br><br><br><br>
 
 ---
