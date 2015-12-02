@@ -1,5 +1,12 @@
 package com.tv_talk;
+/*
+    메뉴바에서 Settings 누르면 POPUP창이 뜸
+    현재 접속중인 서버의 URL이 보임
+    변경하고 Change 누르면 바뀌고, Cancel누르면 안바뀜.
 
+    Intent로 MainActivity에서 URL 받아옴.
+    Change일때 resultOK 코드를 보내면서, 변경된 URL도 전송해줌 ㅋ
+ */
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

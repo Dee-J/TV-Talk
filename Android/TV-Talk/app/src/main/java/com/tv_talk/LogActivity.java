@@ -1,5 +1,10 @@
 package com.tv_talk;
+/*
+    메뉴바에서 Log 누르면 새로운 액티비티 창이 뜸
 
+    현재 접속중인 서버 주소
+    Log들(Connect라던가, 서버주고 변경이라던가)
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

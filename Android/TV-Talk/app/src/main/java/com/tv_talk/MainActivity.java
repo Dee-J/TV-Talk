@@ -19,10 +19,10 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private ArrayList<String> Log_Message;
-    private ServerConnect sc;
-    private SocketConnect soc;
-    private String ip = "192.168.200.124";
-    private int port = 8000;
+    //private ServerConnect sc;
+    //private SocketConnect soc;
+    //private String ip = "192.168.200.124";
+    //private int port = 8000;
     // server info
     private String url = "http://192.168.200.124:8000/";
     // json 받아오는 url
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // link adapter and scroll down to end line
 
         getWindow().setSoftInputMode((WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN));
         // hide keybord
@@ -43,17 +42,20 @@ public class MainActivity extends AppCompatActivity {
         this.webView = (WebView)findViewById(R.id.webView);
         this.webView.getSettings().setJavaScriptEnabled(true);
         this.webView.loadUrl(this.url);
+        // WebView
         this.Log_Message.add("Connect to "+this.url);
+        // Log
     }
 
-    @Override
+    @Override   // Menu Bar
     public boolean onCreateOptionsMenu(Menu menu){
         super.onCreateOptionsMenu(menu);
         MenuItem item = menu.add(0, 1, 0, "Log");
         item = menu.add(0, 2, 0, "Setting");
         return true;
     }
-    @Override
+
+    @Override   // Select Menu
     public boolean onOptionsItemSelected(MenuItem item){
         Intent intent;
         switch(item.getItemId()){
