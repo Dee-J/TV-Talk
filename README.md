@@ -2,7 +2,7 @@
 =======
 #D-Day -10
 허허허허허허허허<br><br><br><br><br>
-192.168.0.8:8080
+192.168.0.62:3000
 
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
