@@ -2,13 +2,10 @@ var startTime;
 var checkTime;
 var showChatWindow;
 
-var a = SystemInfoDisplay;
-
 function showChatWindow() {
 	console.log("Show chat window");
 	document.getElementById('ChatWindow').style.display = 'show';
-	//$('ChatWindow').slideup();
-	
+	//$('ChatWindow').slideup();	
 }
 
 //Initialize function

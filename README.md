@@ -1,9 +1,3 @@
-#D-Day - 9
-=======
-#D-Day -10
-허허허허허허허허<br><br><br><br><br>
-192.168.0.8:8080
-
 # TV-Talk
 Sogang Univ Capstone Design | Channel based Chatting Service
 
@@ -12,36 +6,56 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 1. git pull
 2. git log
 	- 작업 내역 확인 가능 (끝내는건)
-3. <- 너의 작업 ㄱㄱ ->
-4. git add *
-	- 변경 파일들을 모두(*) stage에 올리는 작업
+3. <-- 너의 작업 ㄱㄱ -->
+4. git add 
+	- 변경 파일들을 모두 stage에 올리는 작업
 5. git commit -m '메세지'
 	- 실제 git에 올리기 직전(커밋) 아직 서버에 올라간 상태는 아님.
-	- 메세지는 짧지만 매우 명확하게 (걍 함 ㅇㅇ -> 이딴거 ㅅㅂ)
+	- 메세지는 짧고 명확하게
 6. git pull
 	- 그새 누가 뭐 작업 했을수도 있으니까 원래 push 전에 pull하는게 정석임.
-	- conflict 나면 카톡해...ㄷㄷ
 7. git push
 	- 서버에 실제로 올림
 
-
 ## MileStone
+* 12월 07일 (월)
+	* 동진
+		* 채널 정보 가져오는 모듈 제작 (멤에서 돌려보기)
+	* 장희
+		* // TODO:
+	* 위희
+		* // TODO:
+* 12월 08일 (화)
+	* 동진
+		* 채팅창 view 제작 (div or iframe)
+			*  navigator : 채널 정보, 메뉴 버튼
+			*  section : 채팅 내용
+			*  footer : 광고
+		* Ticker app 구현
+	* 장희
+		* // TODO:
+	* 위희
+		* // TODO:
+* 12월 09일 (수)
+	* 동진
+		* 안드로이드 바인딩
+			* TV -> 서버 / 안드로이드 : 현재 시청중인 채널 정보 전송
+				* 서버사이드 : 보내주는 채팅방 정보 변경
+				* 안드로이드 : 미투...-_-
+	* 장희
+		* // TODO:
+	* 위희
+		* // TODO:
+* 12월 10일 (목)
+	* 동진
+		* 위키 마무리 정리
+	* 장희
+		* // TODO:
+	* 위희
+		* // TODO:
+* **12월 11일**
+	* 발표 당일
 
-###동진 - TV
-1. 채널 정보 가져오는 모듈 제작
-2. 채팅창 view 제작 (div or iframe) : Tizen에서 어떻게 동작하는지 확인 얘네는 CAPH사용하니까..
-3. 채팅창 내부에 CSS 작업 (아니면 iframe으로 걍 html 받아오기 --> css 문제?)
-	*  navigator : 채널 정보, 메뉴 버튼 
-	*  section : 채팅 내용 
-	*  footer : 광고 
-4. 서버 바인딩 (IP ?)
-	* 가상 컴퓨터 방화벽 설정
-
-5. 안드로이드 바인딩 **(가장 큰 문제...-_- 나중에 생각....ㅠㅜㅠㅜㅜㅠㅠㅜㅠㅠ)**
-	* TV -> 서버 / 안드로이드 : 현재 시청중인 채널 정보 전송
-		* 서버사이드 : 보내주는 채팅방 정보 변경
-		* 안드로이드 : 미투...-_-
-	* 아 모르겠다...-_-
 
 * **Major Issue**
 	* Ticker app 개발 방법
