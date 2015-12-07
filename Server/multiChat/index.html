@@ -1,11 +1,13 @@
 <script src="http://192.168.0.62:3000/socket.io/socket.io.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <head>
 	<meta charset="UTF-8">
 	<title>Chat</title>
+	
 </head>
 <div id ="channel"></div>
 <script>
+
 	var socket = io.connect('http://192.168.0.62:3000');//실제 ip사용할것!!!!!!!!!!!!
 	var getParam = function(key){
         var _parammap = {};
@@ -18,14 +20,10 @@
         });
  
         return _parammap[key];
-    };
-	//var channel=$_GET('channel');//document.getElementById("channel");
-	//var channel=document.getElementById("channel").value;
-	var channel=getParam("channel");
-	//var channel=$("#channel");
-	//alert($('#channel').value);
-	//$('#cha').data("KBS1");
-	//channel=$('#cha').data;
+    };//파라메터 패싱 채널정보 받기위한 함수.
+    
+	var channel=getParam("channel");//채널정보 받아서 channel에 저장
+
 	// on connection to server, ask for user's name with an anonymous callback
 	
 	
@@ -34,9 +32,11 @@
 		//	
 		socket.emit('adduser',channel);
 	});
+	
 	socket.on('updatechat', function (username, data) {
 		$('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
 	});
+	
 	// listener, whenever the server emits 'updaterooms', this updates the room the client is in
 	socket.on('updaterooms', function(rooms, current_room) {
 		$('#rooms').empty();
@@ -49,10 +49,16 @@
 			}
 		});
 	});
+	/*
 	function switchRoom(room){
 		socket.emit('switchRoom', room);
 	}
-	
+	function scrolldown(){
+	var aa= document.getElementById('conversation');
+	if(aa.scrollHeight>aa.offsetHeight){
+	aa.scrollTop=aa.scrollHeight-aa.offsetHeight;
+	}
+	}*/
 	// on load of page
 	$(function(){
 		// when the client clicks SEND
@@ -71,15 +77,19 @@
 		});
 		
 	});
+	
 </script>
-
-<div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
+<body>
+<div style="float:left;width:7%;border-right:1px solid black;height:30%;padding:10px;">
 	<b>ROOMS</b>
 	<div id="rooms"></div>
 </div>
-<div style="float:left;width:500px;height:250px;overflow:scroll-y;padding:10px;">
+
+<div style="float:left;width:80%;height:30%;padding:10px;overflow:auto;">
 	<div id="conversation"></div>
+</div>
+	<div style="float:left;margin-left:8.5%;margin-top:1%;height:250px;">
 	<input id="data" style="width:400px;" />
 	<input type="button" id="datasend" value="send" />
-</div>
-
+	</div>
+</body>
