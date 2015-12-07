@@ -1,13 +1,39 @@
-<script src="/socket.io/socket.io.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="http://192.168.0.62:3000/socket.io/socket.io.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+<head>
+	<meta charset="UTF-8">
+	<title>Chat</title>
+</head>
+<div id ="channel"></div>
 <script>
-	var socket = io.connect('http://localhost:8080');
+	var socket = io.connect('http://192.168.0.62:3000');//실제 ip사용할것!!!!!!!!!!!!
+	var getParam = function(key){
+        var _parammap = {};
+        document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+            function decode(s) {
+                return decodeURIComponent(s.split("+").join(" "));
+            }
+ 
+            _parammap[decode(arguments[1])] = decode(arguments[2]);
+        });
+ 
+        return _parammap[key];
+    };
+	//var channel=$_GET('channel');//document.getElementById("channel");
+	//var channel=document.getElementById("channel").value;
+	var channel=getParam("channel");
+	//var channel=$("#channel");
+	//alert($('#channel').value);
+	//$('#cha').data("KBS1");
+	//channel=$('#cha').data;
 	// on connection to server, ask for user's name with an anonymous callback
+	
+	
 	socket.on('connect', function(){
 		// call the server-side function 'adduser' and send one parameter (value of prompt)
-		socket.emit('adduser', prompt("What's your name?"));
+		//	
+		socket.emit('adduser',channel);
 	});
-	// listener, whenever the server emits 'updatechat', this updates the chat body
 	socket.on('updatechat', function (username, data) {
 		$('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
 	});
@@ -16,7 +42,7 @@
 		$('#rooms').empty();
 		$.each(rooms, function(key, value) {
 			if(value == current_room){
-				$('#rooms').append('<div>' + value+ '</div>');
+				$('#rooms').append('<div>' + value  + '</div>');
 			}
 			else {
 				$('#rooms').append('<div><a href="#" onclick="switchRoom(\''+value+'\')">' + value + '</a></div>');
@@ -43,14 +69,17 @@
 				$('#datasend').focus().click();
 			}
 		});
+		
 	});
 </script>
+
 <div style="float:left;width:100px;border-right:1px solid black;height:300px;padding:10px;overflow:scroll-y;">
 	<b>ROOMS</b>
 	<div id="rooms"></div>
 </div>
-<div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
+<div style="float:left;width:500px;height:250px;overflow:scroll-y;padding:10px;">
 	<div id="conversation"></div>
-	<input id="data" style="width:200px;" />
+	<input id="data" style="width:400px;" />
 	<input type="button" id="datasend" value="send" />
 </div>
+

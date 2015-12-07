@@ -2,7 +2,7 @@ var express 	= require('express'),
 	app			= express(),
     server  	= require('http').createServer(app),
     io      	= require('socket.io').listen(server),
-    port    	= 8080;
+    port    	= 3000;
 
 // listening to port...
 server.listen(port);
@@ -13,27 +13,28 @@ app.get('/', function (req, res) {
 
 // usernames which are currently connected to the chat
 var usernames = {};
-
+var usercount=0;
 // rooms which are currently available in chat
 var rooms = ['MBC','SBS','KBS1','KBS2','EBS'];
 
 io.sockets.on('connection', function (socket) {
 	
 	// when the client emits 'adduser', this listens and executes
-	socket.on('adduser', function(username){
+	socket.on('adduser', function(server){
 		// store the username in the socket session for this client
-		socket.username = username;
+		socket.username = 'guest'+usercount;
 		// store the rojsom name in the socket session for this client
-		socket.room = 'MBC';
+		socket.room = server;
 		// add the client's username to the global list
-		usernames[username] = username;
+		usernames['guest'+usercount] = 'guest'+usercount;
 		// send client to room 1
-		socket.join('MBC');
+		socket.join(server);
 		// echo to client they've connected
-		socket.emit('updatechat', 'SERVER', 'you have connected to MBC');
+		socket.emit('updatechat', 'SERVER', 'you have connected to '+server);
 		// echo to room 1 that a person has connected to their room
-		socket.broadcast.to('MBC').emit('updatechat', 'SERVER', username + ' has connected to this room');
-		socket.emit('updaterooms', rooms, 'MBC');
+		socket.broadcast.to(server).emit('updatechat', 'SERVER', 'guest'+usercount + ' has connected to this room');
+		socket.emit('updaterooms', rooms, server);
+		usercount++;
 	});
 	
 	// when the client emits 'sendchat', this listens and executes
