@@ -268,4 +268,3 @@ Sogang Univ Capstone Design | Channel based Chatting Service
 ###3.4. 보안성
 ##4. 개발 제약 사항
 
-
