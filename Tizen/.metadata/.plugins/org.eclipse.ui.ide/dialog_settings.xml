@@ -73,16 +73,17 @@
 		<item value="org.tizen.base.feature:2.0.0"/>
 		<item value="org.tizen.base.native.feature:2.0.0"/>
 		<item value="org.tizen.base.web.feature:2.0.0"/>
-		<item value="org.tizen.common.feature:2.0.0.201511191452"/>
-		<item value="org.tizen.dynamicanalysis.ide.eplugin.feature:2.1.0.201511130647"/>
-		<item value="org.tizen.dynamicanalysis.ide.web.eplugin.feature:2.1.0.201511130646"/>
-		<item value="org.tizen.nativeappcommon.feature:2.0.0.201511051649"/>
-		<item value="org.tizen.nativecommon.feature:2.0.0.201511201330"/>
-		<item value="org.tizen.nativecore.ext.feature:1.0.0.201509230053"/>
-		<item value="org.tizen.nativecore.feature:2.0.0.201511181409"/>
-		<item value="org.tizen.profiler.feature:1.0.0.201511111820"/>
-		<item value="org.tizen.web.feature:2.0.0.201511101724"/>
-		<item value="org.tizen.web.simulator.feature:1.0.0.201509101135"/>
-		<item value="org.tizen.web.tv.sec.feature:1.0.0.201511101650"/>
+		<item value="org.tizen.common.feature:2.0.0.201511191506"/>
+		<item value="org.tizen.dynamicanalysis.ide.eplugin.feature:2.1.0.201511130652"/>
+		<item value="org.tizen.dynamicanalysis.ide.web.eplugin.feature:2.1.0.201511130700"/>
+		<item value="org.tizen.efluibuilder.feature:1.0.0.201511201419"/>
+		<item value="org.tizen.nativeappcommon.feature:2.0.0.201511051636"/>
+		<item value="org.tizen.nativecommon.feature:2.0.0.201511201321"/>
+		<item value="org.tizen.nativecore.ext.feature:1.0.0.201509230043"/>
+		<item value="org.tizen.nativecore.feature:2.0.0.201511181414"/>
+		<item value="org.tizen.profiler.feature:1.0.0.201511111816"/>
+		<item value="org.tizen.web.feature:2.0.0.201511101737"/>
+		<item value="org.tizen.web.simulator.feature:1.0.0.201509101132"/>
+		<item value="org.tizen.web.tv.sec.feature:1.0.0.201511101648"/>
 	</list>
 </section>

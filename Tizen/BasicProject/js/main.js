@@ -11,8 +11,18 @@ function showChatWindow() {
 //Initialize function
 var init = function () {
     // TODO:: Do your initialization job
+
+	tizen.systeminfo.getPropertyValue('DISPLAY', function(e){
+		console.log(e.physicalHeight);
+		console.log(e.physicalWidth);
+		console.log(e.resolutionHeight);
+		console.log(e.resolutionWidth);
+		
+		//document.getElementById('chatting').setAttribute("style", "width: 200px; align: right");});
+
     console.log("init() called");
  
+   
     // add eventListener for keydown
     document.addEventListener('keydown', function(e) {
     	console.log("Key code : " + e.keyCode);

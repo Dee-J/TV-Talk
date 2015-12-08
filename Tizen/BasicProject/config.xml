@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/BasicProject" version="1.0.0" viewmodes="maximized">
-    <tizen:application id="Ept37qBYCp.BasicProject" package="Ept37qBYCp" required_version="2.3"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/TizenTickerWebApp" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="Tl3ZxKfsTZ.TizenTickerWebApp" package="Tl3ZxKfsTZ" required_version="2.3"/>
     <content src="index.html"/>
-    <feature name="http://tizen.org/feature/screen.size.normal.1080.1920"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="icon.png"/>
-    <name>BasicProject</name>
-    <tizen:privilege name="http://tizen.org/privilege/tv.channel"/>
-    <tizen:profile name="tv-samsung-public"/>
+    <name>TizenTickerWebApp</name>
+    <tizen:category name="http://samsung.com/category/ticker"/>
+    <tizen:setting screen-orientation="auto-rotation" background-support="disable"/>
+    <tizen:profile name="tv"/>
 </widget>
