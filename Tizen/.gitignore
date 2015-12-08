@@ -1,7 +1,7 @@
 # For Tizen IDE
 .cproject
 .project
-.metadata
+*.metadata
 
 *target*
 *.jar
